@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* CSS Document */
+
+@font-face {
+    font-family: 'ptsans';
+    src: url('pt-sans.ttf');
+}
+@font-face {
+    font-family: 'pt-sans-narrow-bold';
+    src: url('pt-sans-narrow-bold.ttf');
+}
+
+@font-face {
+    font-family: 'PTSansRegular';
+    src: url('pt_sans-regular-webfont.eot');
+    src: local('O'), url('pt_sans-regular-webfont.woff') format('woff'), url('pt_sans-regular-webfont.ttf') format('truetype'), url('pt_sans-regular-webfont.svg#webfontXXmgsOEo') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
