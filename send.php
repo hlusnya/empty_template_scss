@@ -1,7 +1,7 @@
 <?php
 
-$mail['to'] = "e.market02@yandex.ru, usr3@mail.ru"; // Кому
-$mail['to'] = "hlusnya@yandex.ru";
+$mail['to'] = ""; // Кому
+//$mail['to'] = "hlusnya@yandex.ru";
 
 
 $mes = "Форма: ".$_POST['type_form']."<br>";
