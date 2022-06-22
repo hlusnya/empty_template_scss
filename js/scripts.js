@@ -1,14 +1,3 @@
-function formPosition(form) {
-	var top =  window.pageYOffset || document.documentElement.scrollTop;
-	//alert($(form).outerHeight());
-	if ($(window).outerHeight() < $(form).outerHeight()) {
-		top += 20;
-	}
-	else {
-		top += $(window).outerHeight()/2-$(form).outerHeight()/2;
-	}
-	$(form).css({'top':top,	 'margin-left':($(window).width()-$(form).outerWidth())/2});								
-}
 
 function getUrlVars()
 {
@@ -25,7 +14,8 @@ function getUrlVars()
 	
 $(function(){
 
-	$(".phone-mask").mask("+7(999)999-99-99");
+    $.mask.definitions['~']='[78]';
+	$(".phone-mask").mask("~(999)999-99-99");
 	
 	let param = getUrlVars();
 	let utm = '<input type="hidden" name="utm_source" value="'+((param['utm_source']!=undefined)?decodeURIComponent(param['utm_source']):'')+'">'+
@@ -52,7 +42,8 @@ $(function(){
         $(popup).fadeIn(800); 
 		$('body').addClass('noscroll');
 	})		
-	$('.popup-close').click(function(){
+	$('.popup-close').click(function(e){
+		e.preventDefault();
 		$('.popup').fadeOut(500);
 		$('body').removeClass('noscroll');
 	})
@@ -63,29 +54,16 @@ $(function(){
 	$('#menu_toggler').click(function(e){
 		e.preventDefault();
 		$(this).toggleClass('active');
-		$('.header__fix').toggleClass('active');
+		$('.header__navfix').toggleClass('active');
+		$('body').toggleClass('noscroll');
 	})
 	$('.close-menu').click(function(e){
 		e.preventDefault();
 		$('#menu_toggler').removeClass('active');
-		$('.header__fix').removeClass('active');
+		$('.header__navfix').removeClass('active');
+		$('body').removeClass('noscroll');
 	})
 
-	/**************************************************************
-	ВЫБОР СВЯЗИ
-	**************************************************************/
-	$('.variant_input .ac_in').click(function(){
-		$(this).parent('.variant_input').toggleClass('dropdown');
-		$(this).next().fadeIn(100);
-	})
-	$('.variant_input .item_v').click(function(){
-		$(this).parent().children('.item_v').removeClass('active');
-		$(this).addClass('active'); 
-		$(this).parents('form').find('.in_sv').css('display','none');  
-		$(this).parents('form').find('.in_sv[data-name='+$(this).attr('data-name')+']').css('display','block');   
-		$(this).parents('.variant_input').toggleClass('dropdown').children('.ac_in').html( $(this).html() );
-		$(this).parent().fadeOut(100);
-	})
 
 });
 

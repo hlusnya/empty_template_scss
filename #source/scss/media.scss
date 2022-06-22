@@ -1,0 +1,43 @@
+@import "inc/core";
+
+@media screen and (max-width: $md-1) {
+	.container {
+        max-width: $md-2 + 1px;
+    }
+}	
+
+
+@media screen and (max-width: $md-2) {
+	.container {
+        max-width: $md-3 + 1px;
+    }
+}	
+
+
+@media screen and (max-width: $md-3) {
+	.container {
+        max-width: $md-4 + 1px;
+    }
+}	
+
+
+@media screen and (max-width: $md-4) {
+	.container {
+        max-width: 100%;
+    }
+	
+}	
+
+
+@media screen and (max-width: $md-5) {
+	
+}	
+
+
+@media screen and (max-width: $md-6) {
+	
+}	
+
+
+
+

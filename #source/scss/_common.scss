@@ -1,0 +1,65 @@
+
+.clear { 
+    clear: both; 
+    height: 0; 
+    overflow: hidden; 
+    font-size: 0;
+}
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.container {
+    max-width: 1200px; 
+    padding: 0 15px;
+    margin-left: auto; margin-right: auto;
+    position: relative;
+    @media screen and (max-width: $md-1) {
+         max-width: $md-2 + 1px;
+    }	
+    @media screen and (max-width: $md-2) {
+        max-width: $md-3 + 1px;
+    }	
+    @media screen and (max-width: $md-3) {
+        max-width: $md-4 + 1px;
+    }	
+    @media screen and (max-width: $md-4) {
+        max-width: 100%;
+    }	
+}
+
+
+
+.wrapper {
+    min-height: 100%; width: 100%;  
+    position: relative; 
+    z-index: 0;
+    overflow: hidden;
+}
+
+.noscroll {
+    overflow: hidden;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.section {
+    &__head {
+        
+    }
+    &__title {
+
+    }
+    &__intro {
+      
+    }
+    &__pd {
+        padding: 70px 0;
+    }
+    &__pdt {
+        padding-top: 70px;
+    }
+}
